@@ -1,52 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Send Fragment</title>
-  <script>
-    async function sendFragmentToServer() {
-      // Extract the fragment from the URL, remove the #
-      const fragment = window.location.hash.substring(1);
-
-      if (!fragment) {
-        alert("No fragment found in the URL.");
-        return;
-      }
-
-      alert(`Fragment extracted: ${fragment}`);
-      console.log(`Fragment extracted: ${fragment}`);
-
-      try {
-        const response = await fetch(`https://kcxmetgdgsptpicxwfjh.supabase.co/functions/v1/generatenewpassword/${encodeURIComponent(fragment)}`, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-             "Access-Control-Allow-Origin": "*",
-            // Add any necessary headers here, like API keys if required
-            // "apikey": "YOUR_API_KEY_HERE",
-          },
-        });
-
-        if (!response.ok) {
-          // If the response status is not OK, handle the error
-          const errorData = await response.json();
-          alert(`Error: ${errorData.error || 'Unknown error'}`);
-        } else {
-          // Parse and handle the successful response
-          const data = await response.json();
-          alert(`Fragment sent successfully: ${JSON.stringify(data)}`);
-        }
-      } catch (err) {
-        console.error('Fetch error:', err);
-        alert("Failed to send fragment.");
-      }
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample API Data</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Catch and Send URL Fragment</h1>
-  <p>Click the button below to send the fragment part of the URL to the server.</p>
-  <button onclick="sendFragmentToServer()">Send Fragment</button>
+    <div class="container">
+        <!-- Data will be rendered here -->
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
