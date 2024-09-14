@@ -20,37 +20,35 @@
         .container {
             background: linear-gradient(135deg, #8e2de2, #4a00e0);
             border-radius: 15px;
-            padding: 20px;
+            padding: 30px; /* Increased padding around the container */
             max-width: 600px;
             width: 100%;
-            box-sizing: border-box; /* Include padding in the element's total width and height */
             text-align: center;
             color: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            min-height: 100vh; /* Ensure the container takes up at least the full viewport height */
-            margin: 0 20; /* Edge padding for small screens */
+            box-sizing: border-box; /* Include padding in width calculation */
         }
         h1, h2 {
             color: #fff;
+            margin: 0; /* Remove default margin */
+            padding-bottom: 15px; /* Padding below titles */
         }
         p {
             margin: 10px 0;
         }
         .token-info {
             background: linear-gradient(135deg, #b87cfc, #9a55e4);
-            padding: 10px;
-            border-radius: 5px;
+            padding: 15px; /* Increased padding for token-info */
+            border-radius: 10px;
             margin-bottom: 20px;
             color: #333; /* Text color inside token-info box */
             word-wrap: break-word; /* Ensure long words break and wrap */
             text-align: left; /* Align text to the left */
+            box-sizing: border-box; /* Include padding in width calculation */
         }
         .token-info p {
             font-size: 0.5rem; /* Smaller font size for token info */
-            margin: 5px 0; /* Reduced margin for token info */
+            margin: 5px 0; /* Reduced margin for smaller spacing */
         }
         #access-token {
             font-size: 0.7rem; /* Specific smaller font size for access token */
@@ -90,7 +88,6 @@
             <p><strong>Token Type:</strong> <span id="token-type">No type</span></p>
             <p><strong>Type:</strong> <span id="type">No type</span></p>
         </div>
-
         <button class="button" onclick="copyToken()">Copy Access Token</button>
     </div>
 
