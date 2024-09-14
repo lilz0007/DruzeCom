@@ -31,21 +31,35 @@ async function renderData() {
     if (!data) {
         return;
     }
-container.appendChild(data);
-    data.forEach(item => {
-        const card = document.createElement('div');
-        card.classList.add('card');
+const card = document.createElement('div');
+  card.classList.add('card');
 
-        const title = document.createElement('h2');
-        title.textContent = item.access_token;
+  const title = document.createElement('h2');
+  title.textContent = `Access Token: ${data.access_token}`;
 
-        const body = document.createElement('p');
-        body.textContent = item.expires_in;
+  const expiresIn = document.createElement('p');
+  expiresIn.textContent = `Expires In: ${data.expires_in} seconds`;
 
-        card.appendChild(title);
-        card.appendChild(body);
-        container.appendChild(data);
-    });
+  const expiresAt = document.createElement('p');
+  expiresAt.textContent = `Expires At: ${data.expires_at}`;
+
+  const refreshToken = document.createElement('p');
+  refreshToken.textContent = `Refresh Token: ${data.refresh_token}`;
+
+  const tokenType = document.createElement('p');
+  tokenType.textContent = `Token Type: ${data.token_type}`;
+
+  const type = document.createElement('p');
+  type.textContent = `Type: ${data.type}`;
+
+  card.appendChild(title);
+  card.appendChild(expiresIn);
+  card.appendChild(expiresAt);
+  card.appendChild(refreshToken);
+  card.appendChild(tokenType);
+  card.appendChild(type);
+  container.appendChild(card);
+ 
 }
 
 
