@@ -1,10 +1,10 @@
 // Function to fetch data from the API
 async function fetchData() {
 	//alert(`Fragment extracted: ${fragment}`);
-	//if (!fragment) {
-    //    alert("No fragment found in the URL.");
-    //    return;
-    //  }
+	if (!fragment) {
+       alert("No fragment found in the URL.");
+       return;
+     }
 
     //   alert(`Fragment extracted: ${fragment}`);
     //  console.log(`Fragment extracted: ${fragment}`);
