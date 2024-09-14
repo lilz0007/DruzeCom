@@ -23,9 +23,14 @@
             padding: 20px;
             max-width: 600px;
             width: 100%;
+            box-sizing: border-box; /* Include padding in the element's total width and height */
             text-align: center;
             color: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 100vh; /* Ensure the container takes up at least the full viewport height */
         }
         h1, h2 {
             color: #fff;
@@ -43,7 +48,7 @@
             text-align: left; /* Align text to the left */
         }
         .token-info p {
-            font-size: 0.5rem; /* Smaller font size for token info */
+            font-size: 0.5rem; /* Adjusted font size for token info */
         }
         #access-token {
             font-size: 0.7rem; /* Specific smaller font size for access token */
@@ -73,7 +78,7 @@
 <body>
     <div class="container">
         <h1>Access Token Information</h1>
-                <h2>Paste Access Token and Set New Password</h2>
+        <h2>Paste Access Token and Set New Password</h2>
         <p>Go back to the app, paste the access token below, and set a new password before the token expires.</p>
         <div class="token-info">
             <p><strong>Access Token:</strong> <span id="access-token">No token found</span></p>
@@ -85,8 +90,6 @@
         </div>
 
         <button class="button" onclick="copyToken()">Copy Access Token</button>
-
-
     </div>
 
     <script>
