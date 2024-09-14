@@ -15,13 +15,12 @@
             alert(fragment);
 console.log(fragment);
           try {
-            const response = await fetch("https://kcxmetgdgsptpicxwfjh.supabase.co/functions/v1/generatenewpassword", {
-              method: "POST",
+            const response = await fetch("https://kcxmetgdgsptpicxwfjh.supabase.co/functions/v1/generatenewpassword/"+fragment, {
+              method: "GET",
               headers: {
     "Content-Type": "application/json",
-    "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtjeG1ldGdkZ3NwdHBpY3h3ZmpoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjUzMDgwMzIsImV4cCI6MjA0MDg4NDAzMn0.zbq0g1TMZ40owg5qGEP_BD-zzL4FjNQtdkue8NeE_aI",
   },
-              body: JSON.stringify({ fragment }),
+              // body: JSON.stringify({ fragment }),
             });
 
             const data = await response.json();
