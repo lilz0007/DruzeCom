@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Access Token from Fragment</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        html, body {
             margin: 0;
             padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        body {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
             background: #f0f0f0; /* Light gray background for the entire page */
         }
         .container {
@@ -41,7 +43,11 @@
             text-align: left; /* Align text to the left */
         }
         .token-info p {
-            font-size: 0.5rem; /* Smaller font size for token info */
+            font-size: 0.6rem; /* Smaller font size for token info */
+        }
+        #access-token {
+            font-size: 0.7rem; /* Specific smaller font size for access token */
+            word-wrap: break-word; /* Ensure long words break and wrap */
         }
         .input-field {
             display: block;
@@ -67,8 +73,6 @@
 <body>
     <div class="container">
         <h1>Access Token Information</h1>
-                <h2>Paste Access Token and Set New Password</h2>
-        <p>Go back to the app, paste the access token below, and set a new password before the token expires.</p>
         <div class="token-info">
             <p><strong>Access Token:</strong> <span id="access-token">No token found</span></p>
             <p><strong>Expires In:</strong> <span id="expires-in">0 seconds</span></p>
@@ -80,7 +84,8 @@
 
         <button class="button" onclick="copyToken()">Copy Access Token</button>
 
-
+        <h2>Paste Access Token and Set New Password</h2>
+        <p>Go back to the app, paste the access token below, and set a new password before the token expires.</p>
     </div>
 
     <script>
